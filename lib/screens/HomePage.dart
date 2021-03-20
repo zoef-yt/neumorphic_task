@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:neumorphic/models/topOfApp.dart';
 import 'package:sizer/sizer.dart';
+import 'package:date_picker_timeline/date_picker_timeline.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -34,7 +35,7 @@ class HomePage extends StatelessWidget {
                     padding: EdgeInsets.symmetric(
                         vertical: 4.0.h, horizontal: 2.0.w),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TopOfTheApp(),
                         Stack(
@@ -171,7 +172,7 @@ class HomePage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(height: 1.0.h),
+                        SizedBox(height: 2.0.h),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -194,7 +195,7 @@ class HomePage extends StatelessWidget {
                             )
                           ],
                         ),
-                        // SizedBox(height: 1.0.h),
+                        SizedBox(height: 2.0.h),
                         Container(
                           height: 10.0.h,
                           width: myWidth * 1,
@@ -216,7 +217,7 @@ class HomePage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        // SizedBox(height: 1.0.h),
+                        SizedBox(height: 2.0.h),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -239,6 +240,20 @@ class HomePage extends StatelessWidget {
                             )
                           ],
                         ),
+                        //date
+                        SizedBox(height: 2.0.h),
+                        Container(
+                          child: DatePicker(
+                            DateTime.now(),
+                            daysCount: 365,
+                            width: 60,
+                            height: 80,
+                            initialSelectedDate: DateTime.now(),
+                            selectionColor: appColor.withOpacity(.7),
+                            selectedTextColor: baseColor,
+                          ),
+                        ),
+                        SizedBox(height: 4.0.h),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
@@ -343,11 +358,11 @@ class bottomCards extends StatelessWidget {
               Icon(
                 icon,
                 size: 30.0.sp,
-                color: appColor,
+                color: appColor.withOpacity(.8),
               ),
               Text(
                 text,
-                style: TextStyle(color: appColor),
+                style: TextStyle(color: appColor.withOpacity(.5)),
               )
             ],
           ),
