@@ -6,7 +6,19 @@ import 'package:neumorphic/models/topOfApp.dart';
 import 'package:sizer/sizer.dart';
 import 'package:date_picker_timeline/date_picker_timeline.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    setState(() {});
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     double myWidth = MediaQuery.of(context).size.width;
